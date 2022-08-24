@@ -9,15 +9,25 @@ const StyledInput = styled.input`
 function Input({ name, type, placeholder, value, onChange }) {
   return (
     <div>
-      <StyledInput
-        className="form-control"
-        id="floatingInput"
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
+      {type === "text" ? (
+        <StyledInput
+          className="form-control"
+          id="floatingInput"
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+      ) : (
+        <input
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+      )}
     </div>
   );
 }
