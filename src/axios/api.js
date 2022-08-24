@@ -64,7 +64,7 @@ export const updateTodo = async (id, data) => {
 
 export const deleteTodo = async (id) => {
   try {
-    await authendAxios.delete(`todos/${id}`).then((response) => {
+    await authendAxios.delete(URL + `todos/${id}`).then((response) => {
       alert("삭제완료되었습니다.");
       console.log(response.data);
     });
